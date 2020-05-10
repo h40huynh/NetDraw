@@ -1,0 +1,28 @@
+body {
+    background: #ececec;
+}
+
+#add-icon-area {
+    padding: 0.5rem;
+}
+
+#board {
+    background: white;
+    border-radius: 1rem;
+}
+
+button {
+    background: #20639B;
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #173F5F;
+}
+
+button:active {
+    transform: translateY(2px);
+}
