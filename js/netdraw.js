@@ -142,6 +142,8 @@ export default class NetDraw {
     }
 
     canvas_movemove(e) {
+        e.preventDefault();
+        e.stopPropagation();
         if (this.isDragging) {
             var x_canvas = parseInt(e.clientX - this.board.offsetLeft);
             var y_canvas = parseInt(e.clientY - this.board.offsetTop);
