@@ -11,10 +11,12 @@ export default class Icon {
         this.image.onload = () => {
             this.draw();
         };
+
+        this.fixed_delta = 15;
     }
 
     contains(x, y) {
-        return this.x < x && x < this.x + this.w && this.y < y && y < this.y + this.h;
+        return this.x + this.fixed_delta < x && x < this.x - this.fixed_delta + this.w && this.y + this.fixed_delta < y && y < this.y - this.fixed_delta + this.h;
     }
 
     draw() {

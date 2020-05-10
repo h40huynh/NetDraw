@@ -24,14 +24,15 @@ export default class NetDraw {
 
         this.context = this.board.getContext('2d');
 
-        this.board.height = screen.availHeight - 100;
-        this.board.width = screen.width - 100;
+        this.board.height = screen.height - 100;
+        this.board.width = screen.width - 50;
 
         document.getElementById('main-area').appendChild(this.board);
     }
 
     create_events() {
         this.map_id_button_with_event('add-server', './img/server_96px.png');
+        this.map_id_button_with_event('add-ips', './img/cisco-ips.png');
         this.map_id_button_with_event('add-windows-client', './img/windows_client_96px.png');
         this.map_id_button_with_event('add-linux-server', './img/linux_server_96px.png');
         this.map_id_button_with_event('add-attacker', './img/hacking_96px.png');
@@ -40,7 +41,6 @@ export default class NetDraw {
         this.map_id_button_with_event('add-switch', './img/internet_hub_96px.png');
         this.map_id_button_with_event('add-wireless', './img/wi-fi_router_96px.png');
 
-        this.board.addEventListener('click', (e) => this.canvas_click(e));
         this.board.addEventListener('mousedown', (e) => this.canvas_movedown(e));
         this.board.addEventListener('mouseup', (e) => this.canvas_moveup(e));
         this.board.addEventListener('mouseout', (e) => this.canvas_moveup(e));
@@ -64,12 +64,6 @@ export default class NetDraw {
         var y_random = Math.floor(Math.random() * 400);
         var icon = new Icon(this.context, x_random, y_random, this.icon_size, this.icon_size, image_path);
         this.icons.push(icon);
-    }
-
-    canvas_click(e) {
-        var x_canvas = parseInt(e.clientX - this.board.offsetLeft);
-        var y_canvas = parseInt(e.clientY - this.board.offsetTop);
-        this.detect_selected_icon(x_canvas, y_canvas)
     }
 
     canvas_moveup(e) {
@@ -105,6 +99,9 @@ export default class NetDraw {
     }
 
     canvas_movedown(e) {
+        var x_canvas = parseInt(e.clientX - this.board.offsetLeft);
+        var y_canvas = parseInt(e.clientY - this.board.offsetTop);
+        this.detect_selected_icon(x_canvas, y_canvas)
         var x_canvas = parseInt(e.clientX - this.board.offsetLeft);
         var y_canvas = parseInt(e.clientY - this.board.offsetTop);
 

@@ -3,7 +3,8 @@ body {
 }
 
 #add-icon-area {
-    padding: 0.5rem;
+    text-align: center;
+    margin: 0.5rem;
 }
 
 #board {
@@ -25,4 +26,9 @@ button:hover {
 
 button:active {
     transform: translateY(2px);
+}
+
+select {
+    padding: 0.4rem;
+    border-radius: 4px;
 }
