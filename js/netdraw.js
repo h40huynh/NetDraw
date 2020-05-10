@@ -11,7 +11,7 @@ export default class NetDraw {
         this.startPos = null;
         this.endPos = null;
 
-        this.drawline = [];
+        this.drawline = Array();
         this.current_tool = this.get_current_tool();
 
         this.create_canvas();
@@ -48,6 +48,12 @@ export default class NetDraw {
 
         document.getElementById('selected-tool').addEventListener('change', () => {
             this.current_tool = this.get_current_tool();
+        });
+
+        document.getElementById('clear').addEventListener('click', () => {
+            this.icons = Array();
+            this.drawline = Array();
+            this.redraw_icons();
         });
     }
 
