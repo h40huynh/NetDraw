@@ -31,10 +31,14 @@ export default class NetDraw {
     }
 
     create_events() {
-        this.map_id_button_with_event('add-server', './img/server_80px.png');
-        this.map_id_button_with_event('add-windows-client', './img/windows_client_80px.png');
-        this.map_id_button_with_event('add-attacker', './img/hacking_80px.png');
-        this.map_id_button_with_event('add-firewall', './img/firewall_80px.png');
+        this.map_id_button_with_event('add-server', './img/server_96px.png');
+        this.map_id_button_with_event('add-windows-client', './img/windows_client_96px.png');
+        this.map_id_button_with_event('add-linux-server', './img/linux_server_96px.png');
+        this.map_id_button_with_event('add-attacker', './img/hacking_96px.png');
+        this.map_id_button_with_event('add-firewall', './img/firewall_96px.png');
+        this.map_id_button_with_event('add-router', './img/router_96px.png');
+        this.map_id_button_with_event('add-switch', './img/internet_hub_96px.png');
+        this.map_id_button_with_event('add-wireless', './img/wi-fi_router_96px.png');
 
         this.board.addEventListener('click', (e) => this.canvas_click(e));
         this.board.addEventListener('mousedown', (e) => this.canvas_movedown(e));
